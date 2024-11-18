@@ -1,98 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DealBirb</title>
+    <title>DealBirb - Brings You Discount</title>
     <style>
-        /* Global Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f8ff;  /* Light pastel blue background */
-            color: #333;
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa; /* Soft light blue background */
+            color: #3f3f3f;
+            text-align: center;
             margin: 0;
             padding: 0;
-            height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
             overflow: hidden;
-            transition: background-color 0.3s ease-in-out;
         }
 
-        /* Content Box */
+        /* Content */
         .content {
-            text-align: center;
-            padding: 40px 30px;
-            background: linear-gradient(135deg, #ffadad, #ffd6a5); /* Gradient background */
-            border-radius: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
-            animation: fadeIn 1.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            opacity: 0;
+            animation: fadeInContent 1.5s ease-out forwards;
         }
 
-        /* Title */
         h1 {
-            font-size: 48px;
-            color: #ffffff;  /* White text for the title */
+            font-size: 4em;
             margin: 0;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            animation: bounce 2s infinite ease-in-out;
+            line-height: 1.2;
+            opacity: 0;
+            animation: slideUp 1.5s ease-out forwards;
         }
 
-        /* Tagline */
-        p {
-            font-size: 24px;
-            color: #ffffff;
-            margin-top: 15px;
-            font-weight: 300;
-            opacity: 0.8;
-            animation: fadeIn 2s ease-in-out 0.5s;
+        .blue {
+            color: #0277bd; /* Morning-inspired blue */
         }
 
-        /* Subtle Animation Effects */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        .message {
+            font-size: 1.5em;
+            color: #f8f8f8;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeInText 2s ease-out 0.5s forwards;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
+        /* Footer Styles */
+        .footer {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 30px;
+            padding-bottom: 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInFooter 2s ease-out 1s forwards;
+        }
+
+        .tagline a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        .tagline a:hover {
+            text-decoration: none;
+            color: rgb(219, 219, 219);
+        }
+
+        /* Animations */
+        @keyframes fadeInContent {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
                 transform: translateY(0);
+                opacity: 1;
             }
-            40% {
-                transform: translateY(-10px);
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
             }
-            60% {
-                transform: translateY(-5px);
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInFooter {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
             }
         }
 
         /* Responsive Design */
         @media (max-width: 600px) {
-            .content {
-                padding: 30px 20px;
-            }
-
             h1 {
-                font-size: 36px;
+                font-size: 2.5em;
             }
 
-            p {
-                font-size: 20px;
+            .message {
+                font-size: 1.2em;
             }
         }
     </style>
 </head>
-<body>
 
+<body>
     <div class="content">
-        <h1>DealBirb</h1>
-        <p>Brings You Discount</p>
+        <h1><span class="blue">Deal</span><span class="blue">Birb</span></h1>
+        <div class="message">Brings You Discount</div>
     </div>
 
+    <div class="footer">
+        <p>© 2024 DealBirb. All rights reserved.</p>
+        <p class="tagline">Supervised by <a href="https://ammarkhan.dev" target="_blank">www.ammarkhan.dev</a></p>
+    </div>
 </body>
+
 </html>
